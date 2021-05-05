@@ -3,13 +3,14 @@ import cheerio from "cheerio"
 import express from "express"
 
 const app: express.Express = express()
+const port = process.env.PORT
 
 function serve() {
     app.set("view engine", "ejs")
     app.set("views", "./templates")
     app.use("/static", express.static("./static"))
     app.get("/", controller)
-    app.listen(3000, () => console.log("Listening"))
+    app.listen(port, () => console.log("Listening"))
 }
 
 async function parser(url: string): Promise<Array<string | undefined>> {

@@ -10,4 +10,6 @@ COPY static/ static/
 
 RUN yarn install
 
+EXPOSE $PORT
+
 CMD ["npx", "ts-node", "index.ts"]
