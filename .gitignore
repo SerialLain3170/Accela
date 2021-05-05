@@ -1,4 +1,10 @@
+# suffix
+*.lock
+
+# files
 key.json
 docker-compose.yaml
-
 .DS_Store
+
+# directory
+node_modules
