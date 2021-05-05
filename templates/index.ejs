@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/style.css">
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1 class="title"><%= title %></h1>
+        <div class="songs">
+            <% for (var i = 0; i < 10; i++) { %>
+                <iframe width='70%' height='100' scrolling='no' frameborder='no' allow='autoplay' src='<%= array[i] %>'>></iframe>
+            <% } %>
+        </div>
+    </body>
+</html>

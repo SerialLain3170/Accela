@@ -1,0 +1,31 @@
+html {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    color: #ffffff
+}
+  
+body {
+    background-color: #131313;
+    background-size: 80px 80px;
+    background-image:
+    linear-gradient(rgba(51, 49, 48, 0.7) 1%, rgba(51, 49, 48, .7) 1%, transparent 1%,
+    transparent 99%, rgba(51, 49, 48, .7) 99%, rgba(51, 49, 48, .7) 100%),
+    linear-gradient(90deg, rgba(51, 49, 48, .7) 1%, rgba(51, 49, 48, .7) 1%, transparent 1%,
+    transparent 99%, rgba(51, 49, 48, .7) 99%, rgba(51, 49, 48, .7) 100%),
+    linear-gradient(transparent, transparent 25%, rgba(51, 49, 48, .4) 25%, rgba(51, 49, 48, .4) 26%, transparent 26%,
+    transparent 50%, rgba(51, 49, 48, .4) 50%, rgba(51, 49, 48, .4) 51%, transparent 51%,
+    transparent 75%, rgba(51, 49, 48, .4) 75%, rgba(51, 49, 48, .4) 76%, transparent 76%, transparent 100%),
+    linear-gradient(90deg, transparent, transparent 25%, rgba(51, 49, 48, .4) 25%, rgba(51, 49, 48, .4) 26%, transparent 26%,
+    transparent 50%, rgba(51, 49, 48, .4) 50%, rgba(51, 49, 48, .4) 51%, transparent 51%,
+    transparent 75%, rgba(51, 49, 48, .4) 75%, rgba(51, 49, 48, .4) 76%, transparent 76%, transparent 100%);
+}
+
+.songs {
+    position: absolute;
+    left: 23%;
+    top: 20%;
+}
+
+.title {
+    font-size: 64px;
+    text-align: center;
+}
