@@ -7,10 +7,58 @@
     </head>
     <body>
         <h1 class="title"><%= title %></h1>
+        <input type="hidden" name="current_id" id="current_id">
         <div class="songs">
             <% for (var i = 0; i < 50; i++) { %>
-                <iframe width='70%' height='100' scrolling='no' frameborder='no' allow='autoplay' src='<%= array[i] %>'>></iframe>
+                <iframe class="widget" id="<%= i %>" width='70%' height='100' scrolling='no' frameborder='no' allow='autoplay' src='<%= array[i] %>'></iframe>
             <% } %>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var iframeElements = document.querySelectorAll("iframe");
+            console.log(iframeElements.length);
+            iframeElements.forEach(function(target) {
+                SC.Widget(target).bind(SC.Widget.Events.READY, function() {
+                    SC.Widget(target).bind(SC.Widget.Events.PLAY, function() {
+                        var current_id = target.id;
+
+                        if (current_id == "49") {
+                            $('#current_id').attr("value", -1);
+                        } else {
+                            $('#current_id').attr("value", Number(current_id));
+                        }
+                    });
+
+                    SC.Widget(target).bind(SC.Widget.Events.FINISH, function() {
+                        var next_id = document.getElementById('current_id').value;
+                        next_id = Number(next_id) + 1;
+                        var next_iframe = document.getElementById(String(next_id));
+                        SC.Widget(next_iframe).play();
+                    });
+                });
+            });
+
+            // keyboard events
+            window.document.onkeydown = function(event) {
+                if (event.key ==="n") {
+                    var current_id = Number(document.getElementById('current_id').value) + 1;
+                    if (current_id > 49) {
+                        current_id = 49;
+                    }
+                    var element = document.getElementById(String(current_id));
+                    SC.Widget(element).play();
+                };
+
+                if (event.key ==="p") {
+                    var current_id = Number(document.getElementById('current_id').value) - 1;
+                    if (current_id < 0) {
+                        current_id = 0;
+                    }
+                    var element = document.getElementById(String(current_id));
+                    SC.Widget(element).play();
+                };
+            };
+        </script>
     </body>
 </html>

@@ -4,7 +4,7 @@ import express from "express"
 
 const app: express.Express = express()
 const port = process.env.PORT
-const maxD: number = 2
+const maxD: number = 1
 const artists: Array<string | undefined> = [
     "/templime",
     "/harito",
