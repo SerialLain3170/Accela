@@ -3,6 +3,7 @@ FROM node:15-alpine
 COPY index.ts .
 COPY package.json .
 COPY tsconfig.json .
+COPY artists.txt .
 RUN mkdir templates
 COPY templates/ templates/
 RUN mkdir static

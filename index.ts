@@ -1,22 +1,13 @@
 import superagent from "superagent"
 import cheerio from "cheerio"
-import express from "express"
+import express, { text } from "express"
+import * as fs from "fs";
 
 const app: express.Express = express()
 const port = process.env.PORT
 const maxD: number = 1
-const artists: Array<string | undefined> = [
-    "/templime",
-    "/harito",
-    "/ujico",
-    "/sakuzyo",
-    "/hamu_lr",
-    "/mamomop",
-    "/psyqui",
-    "/ntreboot",
-    "/lemon-t-1",
-    "/capchii"
-]
+const artists: Array<string | undefined> = textRead("./artists.txt")
+console.log(artists)
 var hashmap: {[key: string]: boolean} = {}
 
 function serve() {
@@ -78,6 +69,12 @@ async function controller(req: express.Request, res: express.Response, next: exp
         "array": links
     }
     res.render("index.ejs", data)
+}
+
+function textRead(textFile: string): Array<string | undefined> {
+    let text = fs.readFileSync(textFile, "utf-8")
+
+    return text.split("\n")
 }
 
 function arrayShuffle(array: Array<string | undefined>): Array<string | undefined> {
