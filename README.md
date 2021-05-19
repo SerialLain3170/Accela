@@ -21,3 +21,12 @@ $ bash build.sh
 ```
 $ docker-compose up -d
 ```
+
+## User Guide
+
+- Like playlists, next songs are automatically played after previous songs finish. When the final song is over, the first song starts to play.
+- If you push `n`, the next song starts to play. If you push `p`, the previous song starts to play.
+
+## System Configuration
+
+![](./image/system.png)
