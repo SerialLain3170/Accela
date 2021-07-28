@@ -15,7 +15,7 @@ Accela helps users look for new songs in SoundCloud.
 $ bash build.sh
 ```
  
-### 2. Start Cyberia
+### 2. Start Accela
 - Start application via the command below and access 0.0.0.0:5000. It will take a long time to start first page.
 
 ```
